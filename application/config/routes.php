@@ -126,8 +126,8 @@ $route['gd99/printbarcodefg'] = 'Admin/Print_barcodeqrcode2'; //printing barcode
 $route['gd99/hapusadditemfg'] = 'Admin/gudang99fg/hapusadditem';//hapus add item
 $route['gd99/loadfgkeluar'] = 'Admin/gudang99fg/getdatafgkeluar'; //get data fg keluar
 $route['gd99/loadfgmasuk'] = 'Admin/gudang99fg/getdatafgmasuk'; //get data fg masuk
-$route['gd99/hapusfgkeluar'] = 'Admin/gudang99/hapusdatafgkeluar'; //hapus data fg keluar
-$route['gd99/hapusfgmasuk'] = 'Admin/gudang99/hapusdatafgmasuk'; //hapus data fg masuk
+$route['gd99/hapusfgkeluar'] = 'Admin/gudang99fg/hapusdatafgkeluar'; //hapus data fg keluar
+$route['gd99/hapusfgmasuk'] = 'Admin/gudang99fg/hapusdatafgmasuk'; //hapus data fg masuk
 
 $route['operator99/upload'] = 'Operator/Konfirmasi_bahan99';//ADMIN 99
 $route['operator99/getitembycode'] = 'Operator/Konfirmasi_bahan99/getrmbykodeitem'; //get data untuk handphone dan kembalikan data untuk input
