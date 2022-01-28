@@ -5,6 +5,10 @@
 <!-- Bootstrap -->
 <script src="<?php echo base_url('assets'); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- PAGE PLUGINS -->
+<!-- InputMask -->
+<script src="<?php echo base_url('assets'); ?>/plugins/moment/moment.min.js"></script>
+<!-- date-range-picker -->
+<script src="<?php echo base_url('assets'); ?>/plugins/daterangepicker/daterangepicker.js"></script>
 
 <!-- DataTables  & Plugins -->
 <script src="<?php echo base_url('assets'); ?>/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -19,6 +23,7 @@
 <script src="<?php echo base_url('assets'); ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 
 <!-- overlayScrollbars -->
 <script src="<?php echo base_url('assets'); ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
@@ -81,6 +86,9 @@ function onMessageArrived(message) {
     
 
     $(document).ready( function () {
+
+        //Date range picker
+         $('#reservation').daterangepicker()
 
        window.table = $('#barang').DataTable({ 
        "processing": true,

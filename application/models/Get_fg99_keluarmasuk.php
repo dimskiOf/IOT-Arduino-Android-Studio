@@ -20,7 +20,7 @@ class Get_fg99_keluarmasuk extends CI_Model {
             $start =preg_replace("/[^a-zA-Z0-9.]/", '', "{$_POST['start']}"); 
             // order by apa
             $orderby = " fg.ID_FG_KELUAR ";
-            $ascdesc = " asc ";
+            $ascdesc = " desc ";
 
             if($where != null)
             {
@@ -160,7 +160,7 @@ class Get_fg99_keluarmasuk extends CI_Model {
             $start =preg_replace("/[^a-zA-Z0-9.]/", '', "{$_POST['start']}"); 
             // order by apa
             $orderby = " fg.ID_FG_MASUK ";
-            $ascdesc = " asc ";
+            $ascdesc = " desc ";
 
             if($where != null)
             {
