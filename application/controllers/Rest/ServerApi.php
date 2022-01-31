@@ -271,4 +271,213 @@ class ServerApi extends CI_Controller {
 
       }
       //  <!--- end get data rm fg -->
+
+      //<!-- add data rm fg -->
+      public function addRmKeluar()
+      {
+         $gd99 = $this->load->database('gd99', TRUE);
+          // deklarasi variable
+          $itemno = $this->input->post('itemno');
+          $tglcreaterm = $this->input->post('tglcreaterm');
+          $qtyrm = $this->input->post('qtyrm');
+          $loadnumber = $this->input->post('loadnumber');
+          $inputminusplus = $this->input->post('inputminusplus');
+
+          // isikan variabel dengan nama file
+          $data['ID_BARANG_RM'] = $itemno;
+          $data['TGL_CREATE_RM'] = date("Y-m-d H:i:s");
+          $data['QTY_RM'] = $qtyrm;
+          $data['LOAD_NMBR'] = $loadnumber;
+          $data['INPUTMINUSPLUS'] = $inputminusplus;
+
+          if (!empty($itemno) | !empty($tglcreaterm) | !empty($qtyrm) | !empty($loadnumber) | !empty($inputminusplus)){
+          $q = $gd99->insert('WAREHOUSE_RM_KELUAR', $data);
+          // check insert berhasil apa nggak
+          if ($q) {
+            $response['pesan'] = 'insert berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'insert error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+        }else{
+          $response['pesan'] = 'null data';
+          $response['status'] = 404;
+          echo json_encode($response);
+        }
+      }
+
+     public function addRmMasuk()
+      {
+         $gd99 = $this->load->database('gd99', TRUE);
+          // deklarasi variable
+          $itemno = $this->input->post('itemno');
+          $tglcreaterm = $this->input->post('tglcreaterm');
+          $qtyrm = $this->input->post('qtyrm');
+          $loadnumber = $this->input->post('loadnumber');
+          $inputminusplus = $this->input->post('inputminusplus');
+
+          // isikan variabel dengan nama file
+          $data['ID_BARANG_RM'] = $itemno;
+          $data['TGL_CREATE_RM'] = date("Y-m-d H:i:s");
+          $data['QTY_RM'] = $qtyrm;
+          $data['LOAD_NMBR'] = $loadnumber;
+          $data['INPUTMINUSPLUS'] = $inputminusplus;
+
+          if (!empty($itemno) | !empty($tglcreaterm) | !empty($qtyrm) | !empty($loadnumber) | !empty($inputminusplus)){
+          $q = $gd99->insert('WAREHOUSE_RM_MASUK', $data);
+          // check insert berhasil apa nggak
+          if ($q) {
+            $response['pesan'] = 'insert berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'insert error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+        }else{
+          $response['pesan'] = 'null data';
+          $response['status'] = 404;
+          echo json_encode($response);
+        }
+      }
+
+     public function addFgKeluar()
+      {
+         $gd99 = $this->load->database('gd99', TRUE);
+          // deklarasi variable
+          $itemno = $this->input->post('itemno');
+          $tglcreaterm = $this->input->post('tglcreatefg');
+          $qtyrm = $this->input->post('qtyfg');
+          $loadnumber = $this->input->post('loadnumber');
+          $inputminusplus = $this->input->post('inputminusplus');
+
+          // isikan variabel dengan nama file
+          $data['ID_BARANG_FG'] = $itemno;
+          $data['TGL_CREATE_FG'] = date("Y-m-d H:i:s");
+          $data['QTY_FG'] = $qtyrm;
+          $data['LOAD_NMBR'] = $loadnumber;
+          $data['INPUTMINUSPLUS'] = $inputminusplus;
+
+          if (!empty($itemno) | !empty($tglcreaterm) | !empty($qtyrm) | !empty($loadnumber) | !empty($inputminusplus)){
+          $q = $gd99->insert('WAREHOUSE_FG_KELUAR', $data);
+          // check insert berhasil apa nggak
+          if ($q) {
+            $response['pesan'] = 'insert berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'insert error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+        }else{
+          $response['pesan'] = 'null data';
+          $response['status'] = 404;
+          echo json_encode($response);
+        }
+      }
+
+      public function addFgMasuk()
+      {
+         $gd99 = $this->load->database('gd99', TRUE);
+          // deklarasi variable
+          $itemno = $this->input->post('itemno');
+          $tglcreaterm = $this->input->post('tglcreatefg');
+          $qtyrm = $this->input->post('qtyfg');
+          $loadnumber = $this->input->post('loadnumber');
+          $inputminusplus = $this->input->post('inputminusplus');
+
+          // isikan variabel dengan nama file
+          $data['ID_BARANG_FG'] = $itemno;
+          $data['TGL_CREATE_FG'] = date("Y-m-d H:i:s");
+          $data['QTY_FG'] = $qtyrm;
+          $data['LOAD_NMBR'] = $loadnumber;
+          $data['INPUTMINUSPLUS'] = $inputminusplus;
+
+          if (!empty($itemno) | !empty($tglcreaterm) | !empty($qtyrm) | !empty($loadnumber) | !empty($inputminusplus)){
+          $q = $gd99->insert('WAREHOUSE_FG_MASUK', $data);
+          // check insert berhasil apa nggak
+          if ($q) {
+            $response['pesan'] = 'insert berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'insert error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+        }else{
+          $response['pesan'] = 'null data';
+          $response['status'] = 404;
+          echo json_encode($response);
+        }
+      }
+      //<!-- End add data rm fg -->
+
+      //<! -- start delete data rm fg -->
+      public function deleteFgKeluar()
+      {
+        $dbconnect = $this->load->database('gd99', TRUE);
+          $id = $this->input->post('id');
+          $dbconnect->where('ID_FG_KELUAR', $id);
+          $status = $dbconnect->delete('WAREHOUSE_FG_KELUAR');
+          if ($status == true) {
+            $response['pesan'] = 'hapus berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'hapus error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+      }
+
+      public function deleteFgMasuk()
+      {
+        $dbconnect = $this->load->database('gd99', TRUE);
+          $id = $this->input->post('id');
+          $dbconnect->where('ID_FG_MASUK', $id);
+          $status = $dbconnect->delete('WAREHOUSE_FG_MASUK');
+          if ($status == true) {
+            $response['pesan'] = 'hapus berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'hapus error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+      }
+
+     public function deleteRmKeluar()
+      {
+        $dbconnect = $this->load->database('gd99', TRUE);
+          $id = $this->input->post('id');
+          $dbconnect->where('ID_RM_KELUAR', $id);
+          $status = $dbconnect->delete('WAREHOUSE_RM_KELUAR');
+          if ($status == true) {
+            $response['pesan'] = 'hapus berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'hapus error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+      }
+
+      public function deleteRmMasuk()
+      {
+        $dbconnect = $this->load->database('gd99', TRUE);
+          $id = $this->input->post('id');
+          $dbconnect->where('ID_RM_MASUK', $id);
+          $status = $dbconnect->delete('WAREHOUSE_RM_MASUK');
+          if ($status == true) {
+            $response['pesan'] = 'hapus berhasil';
+            $response['status'] = 200;
+          } else {
+            $response['pesan'] = 'hapus error';
+            $response['status'] = 404;
+          }
+          echo json_encode($response);
+      }
+      //<! -- End delete data rm fg -->
+      
 }

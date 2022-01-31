@@ -82,8 +82,8 @@ $route['mpi/printbarcodefg'] = 'Admin/Print_barcodeqrcode4'; //printing barcode 
 $route['mpi/hapusadditemfg'] = 'Admin/mpifg/hapusadditem';//hapus add item
 $route['mpi/loadfgkeluar'] = 'Admin/mpifg/getdatafgkeluar'; //get data fg keluar
 $route['mpi/loadfgmasuk'] = 'Admin/mpifg/getdatafgmasuk'; //get data fg masuk
-$route['mpi/hapusfgkeluar'] = 'Admin/mpi/hapusdatafgkeluar'; //hapus data fg keluar
-$route['mpi/hapusfgmasuk'] = 'Admin/mpi/hapusdatafgmasuk'; //hapus data fg masuk
+$route['mpi/hapusfgkeluar'] = 'Admin/mpifg/hapusdatafgkeluar'; //hapus data fg keluar
+$route['mpi/hapusfgmasuk'] = 'Admin/mpifg/hapusdatafgmasuk'; //hapus data fg masuk
 
 
 $route['operatormpi/upload'] = 'Operator/Konfirmasi_bahanmpi';//ADMIN MPI

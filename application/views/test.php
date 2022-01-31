@@ -1,4 +1,4 @@
-<form action="http://192.168.100.129/ci3/operator99/inputdataarduinorm99keluar" method="post" enctype="application/x-www-form-urlencoded">
+<form action="http://192.168.1.244/ci3/operatormpi/inputdataarduinormmpimasuk" method="post" enctype="application/x-www-form-urlencoded">
     <div class="form-group">
         <label for="title">Title</label>
         <input type="text" name="timbangandanbarcode" class="form-control" required>
