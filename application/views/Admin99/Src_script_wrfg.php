@@ -88,7 +88,22 @@ function onMessageArrived(message) {
     $(document).ready( function () {
 
         //Date range picker
-         $('#reservation').daterangepicker()
+         $('#fgkeluarfilter').daterangepicker({
+            //endDate: moment().add(1,'days')
+         }, function(start, end, label) {
+            tablesss.ajax.reload();
+
+          //   console.log(start.format('YYYY-MM-DD') + "#start#" + end.format('YYYY-MM-DD')+ "#start#");
+         });
+
+         $('#fgmasukfilter').daterangepicker({
+           // endDate: moment().add(1,'days')
+         }, function(start, end, label) {
+            tabless.ajax.reload();
+
+         //    console.log(start.format('YYYY-MM-DD') + "#start#" + end.format('YYYY-MM-DD')+ "#start#");
+        });
+       
 
        window.table = $('#barang').DataTable({ 
        "processing": true,
@@ -136,7 +151,8 @@ function onMessageArrived(message) {
         "order": [[ 0, 'desc' ]],
         "ajax": {
             "url": "<?php echo base_url('gd99/loadfgmasuk')?>",
-            "type": "POST"
+            "type": "POST",
+            "data" : function(d){ d.datefilter = $('#fgmasukfilter').data('daterangepicker').startDate.format('YYYY-MM-DD')+"#start#"+$('#fgmasukfilter').data('daterangepicker').endDate.format('YYYY-MM-DD')+"#start#" }
         },
         "columnDefs": [
             {
@@ -202,8 +218,11 @@ function onMessageArrived(message) {
         "order": [[ 0, 'desc' ]],
         "ajax": {
             "url": "<?php echo base_url('gd99/loadfgkeluar')?>",
-            "type": "POST"
+            "type": "POST",
+            "data" : function(d){ d.datefilter = $('#fgkeluarfilter').data('daterangepicker').startDate.format('YYYY-MM-DD')+"#start#"+$('#fgkeluarfilter').data('daterangepicker').endDate.format('YYYY-MM-DD')+"#start#" }
         },
+        //.add(1, 'days')
+        "destroy" : true,
         "columnDefs": [
             {
                 "targets":  2, 
@@ -394,7 +413,6 @@ function hapusadditem(idi)
 
 //select ajax
 $(document).ready(function(){
-
  $("#selUser").select2({
   ajax: { 
    url: "<?php echo base_url('gd99/select2getfg') ?>",

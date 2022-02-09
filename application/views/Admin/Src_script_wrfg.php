@@ -5,6 +5,9 @@
 <!-- Bootstrap -->
 <script src="<?php echo base_url('assets'); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- PAGE PLUGINS -->
+<!-- date-range-picker -->
+<script src="<?php echo base_url('assets'); ?>/plugins/moment/moment.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/daterangepicker/daterangepicker.js"></script>
 
 <!-- DataTables  & Plugins -->
 <script src="<?php echo base_url('assets'); ?>/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -82,6 +85,23 @@ function onMessageArrived(message) {
 
     $(document).ready( function () {
 
+          //Date range picker
+         $('#fgkeluarfilter').daterangepicker({
+            //endDate: moment().add(1,'days')
+         }, function(start, end, label) {
+            tablesss.ajax.reload();
+
+          //   console.log(start.format('YYYY-MM-DD') + "#start#" + end.format('YYYY-MM-DD')+ "#start#");
+         });
+
+         $('#fgmasukfilter').daterangepicker({
+           // endDate: moment().add(1,'days')
+         }, function(start, end, label) {
+            tabless.ajax.reload();
+
+         //    console.log(start.format('YYYY-MM-DD') + "#start#" + end.format('YYYY-MM-DD')+ "#start#");
+        });
+
        window.table = $('#barang').DataTable({ 
        "processing": true,
         "serverSide": true,
@@ -128,7 +148,8 @@ function onMessageArrived(message) {
         "order": [[ 0, 'desc' ]],
         "ajax": {
             "url": "<?php echo base_url('mpi/loadfgmasuk')?>",
-            "type": "POST"
+            "type": "POST",
+            "data" : function(d){ d.datefilter = $('#fgmasukfilter').data('daterangepicker').startDate.format('YYYY-MM-DD')+"#start#"+$('#fgmasukfilter').data('daterangepicker').endDate.format('YYYY-MM-DD')+"#start#" }
         },
         "columnDefs": [
             {
@@ -194,7 +215,8 @@ function onMessageArrived(message) {
         "order": [[ 0, 'desc' ]],
         "ajax": {
             "url": "<?php echo base_url('mpi/loadfgkeluar')?>",
-            "type": "POST"
+            "type": "POST",
+            "data" : function(d){ d.datefilter = $('#fgmasukfilter').data('daterangepicker').startDate.format('YYYY-MM-DD')+"#start#"+$('#fgmasukfilter').data('daterangepicker').endDate.format('YYYY-MM-DD')+"#start#" }
         },
         "columnDefs": [
             {

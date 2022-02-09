@@ -22,12 +22,12 @@ class Get_fg99_keluarmasuk extends CI_Model {
             $orderby = " fg.ID_FG_KELUAR ";
             $ascdesc = " desc ";
 
-            if($where != null)
+            if(!empty($where))
             {
                 $setWhere = array();
                 foreach ($where as $key => $value)
                 {
-                    $setWhere[] = $key."='".$value."'";
+                    $setWhere[] = $key." ".$value;
                 }
                 $fwhere = implode(' AND ', $setWhere);
 
@@ -167,7 +167,7 @@ class Get_fg99_keluarmasuk extends CI_Model {
                 $setWhere = array();
                 foreach ($where as $key => $value)
                 {
-                    $setWhere[] = $key."='".$value."'";
+                    $setWhere[] = $key." ".$value;
                 }
                 $fwhere = implode(' AND ', $setWhere);
 

@@ -232,6 +232,19 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <div class="form-group">
+                  <label>Date range Filter:</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="far fa-calendar-alt"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control float-right" id="fgmasukfilter">
+                  </div>
+                  <!-- /.input group -->
+                </div>
                 <table id="fgmasuk" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -369,6 +382,19 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <div class="form-group">
+                  <label>Date range Filter:</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="far fa-calendar-alt"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control float-right" id="fgkeluarfilter">
+                  </div>
+                  <!-- /.input group -->
+                </div>
                 <table id="fgkeluar" class="table table-bordered table-striped">
                   <thead>
                   <tr>

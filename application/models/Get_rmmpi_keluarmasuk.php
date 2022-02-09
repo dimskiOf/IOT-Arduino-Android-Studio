@@ -26,7 +26,7 @@ class Get_rmmpi_keluarmasuk extends CI_Model {
                 $setWhere = array();
                 foreach ($where as $key => $value)
                 {
-                    $setWhere[] = $key."='".$value."'";
+                    $setWhere[] = $key." ".$value;
                 }
                 $fwhere = implode(' AND ', $setWhere);
 
@@ -165,7 +165,7 @@ class Get_rmmpi_keluarmasuk extends CI_Model {
                 $setWhere = array();
                 foreach ($where as $key => $value)
                 {
-                    $setWhere[] = $key."='".$value."'";
+                    $setWhere[] = $key." ".$value;
                 }
                 $fwhere = implode(' AND ', $setWhere);
 

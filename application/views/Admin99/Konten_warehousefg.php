@@ -227,59 +227,26 @@
         
         <!-- Main row -->
         <div class="row">
-          <!--  start date -->
-            <div class="col-md-4">
-              <div class="form-group start-date">
-                <label>From</label>
-                <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="start_date" name="start_date">
-                </div>
-                <!-- /.input group -->
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group end-date">
-                <label>To</label>
-                <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="end_date" name="end_date">
-                </div>
-                <!-- /.input group -->
-              </div>
-            </div>
-            <div class="col-md-2">
-              <label>Select</label>
-              <select class="form-control select2" id="invType" name="invType" style="width: 100%;">
-                <option value="0" />Select</option>
-                <option value="1">Data1</option>
-                <option value="2">Data2</option>
-                <option value="3">Data3</option>
-                <option value="4">Data4</option>
-                <option value="5">Data5</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <div class="form-group">
-                  <label>Go </label>
-                  <div class="input-group date">
-                    <button class="btn btn-warning btn-md btn-search" name = "search" id="search">Search!</button> 
-                  </div>
-                  <!-- /.input group -->
-              </div>
-          </div>
-          <!---  end date -->
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Warehouse Fg Masuk</h3>
+                <h3 class="card-title">Data Barang Masuk</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <div class="form-group">
+                  <label>Date range Filter:</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="far fa-calendar-alt"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control float-right" id="fgmasukfilter">
+                  </div>
+                  <!-- /.input group -->
+                </div>
                 <table id="fgmasuk" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -410,52 +377,6 @@
         
         <!-- Main row -->
         <div class="row">
-          <!--  start date -->
-            <div class="col-md-4">
-              <div class="form-group start-date">
-                <label>From</label>
-                <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="datepicker form-control pull-right" id="start_date" name="start_date">
-                </div>
-                <!-- /.input group -->
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group end-date">
-                <label>To</label>
-                <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="datepicker form-control pull-right" id="end_date" name="end_date">
-                </div>
-                <!-- /.input group -->
-              </div>
-            </div>
-            <div class="col-md-2">
-              <label>Select</label>
-              <select class="form-control select2" id="invType" name="invType" style="width: 100%;">
-                <option value="0" />Select</option>
-                <option value="1">Data1</option>
-                <option value="2">Data2</option>
-                <option value="3">Data3</option>
-                <option value="4">Data4</option>
-                <option value="5">Data5</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <div class="form-group">
-                  <label>Go </label>
-                  <div class="input-group date">
-                    <button class="btn btn-warning btn-md btn-search" name = "search" id="search">Search!</button> 
-                  </div>
-                  <!-- /.input group -->
-              </div>
-          </div>
-          <!---  end date -->
           <div class="col-12">
             <div class="card">
               <div class="card-header">
@@ -464,8 +385,8 @@
               <!-- /.card-header -->
               <div class="card-body">
                  <!-- Date range -->
-                <div class="form-group">
-                  <label>Date range:</label>
+              <div class="form-group">
+                  <label>Date range Filter:</label>
 
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -473,7 +394,7 @@
                         <i class="far fa-calendar-alt"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control float-right" id="reservation">
+                    <input type="text" class="form-control float-right" id="fgkeluarfilter">
                   </div>
                   <!-- /.input group -->
                 </div>

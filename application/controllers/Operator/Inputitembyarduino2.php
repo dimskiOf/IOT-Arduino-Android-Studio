@@ -95,6 +95,7 @@ class Inputitembyarduino2 extends CI_Controller {
                     }
 
                  if (($status->num_rows() > 0) && !empty($exploder[count($exploder)-2])){
+                    //sgw/gsc
                     if (preg_match('/(GS)|(ST)|(US)|(NT)|(gs)|(st)|(us)|(nt)|(,)|[+]/i',$exploder[count($exploder)-2]) == true){
                       
                       $sgw = explode(" ", $exploder[count($exploder)-2]);
@@ -117,9 +118,31 @@ class Inputitembyarduino2 extends CI_Controller {
                         }else{
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
                         }
+                    //A12E prolite
+                    }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
+                    
+                     $host = getHostByName(getHostName());
+                      $port = 1883;
+                      $clientID = md5(uniqid());
+              
+                      $mqtt = new \Lightning\App($host, $port, $clientID);
+              
+                      if (!$mqtt->connect()) {
+                          exit(1);
+                      }
+
+                      $mqtt->publish("dimas", 'data rmmpi keluar', 1);    
+              
+                     $status = $this->In_Timbangandanbarcodempi->inputdata($str,str_replace("wn","",$exploder[count($exploder)-2])+$minus,$minus);
+
+                     if($status){
+                      echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
+                        }else{
+                      echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
+                        }
 
                     }else{
-
+                  //timbangan cas hdi
                   $host = getHostByName(getHostName());
                   $port = 1883;
                   $clientID = md5(uniqid());
@@ -260,6 +283,28 @@ class Inputitembyarduino2 extends CI_Controller {
                      $status = $this->In_Timbangandanbarcodempi->inputdata2($str,$sgw[count($sgw)-1]+$minus,$minus);
                
                     if($status){
+                      echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
+                        }else{
+                      echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
+                        }
+
+                    }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
+                    
+                     $host = getHostByName(getHostName());
+                      $port = 1883;
+                      $clientID = md5(uniqid());
+              
+                      $mqtt = new \Lightning\App($host, $port, $clientID);
+              
+                      if (!$mqtt->connect()) {
+                          exit(1);
+                      }
+
+                      $mqtt->publish("dimas", 'data rmmpi masuk', 1);    
+              
+                     $status = $this->In_Timbangandanbarcodempi->inputdata2($str,str_replace("wn","",$exploder[count($exploder)-2])+$minus,$minus);
+
+                     if($status){
                       echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
@@ -407,6 +452,28 @@ class Inputitembyarduino2 extends CI_Controller {
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
                         }
 
+                    }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
+                    
+                     $host = getHostByName(getHostName());
+                      $port = 1883;
+                      $clientID = md5(uniqid());
+              
+                      $mqtt = new \Lightning\App($host, $port, $clientID);
+              
+                      if (!$mqtt->connect()) {
+                          exit(1);
+                      }
+
+                      $mqtt->publish("dimas", 'data fgmpi keluar', 1);    
+              
+                     $status = $this->In_Timbangandanbarcodempi->inputdata3($str,str_replace("wn","",$exploder[count($exploder)-2])+$minus,$minus);
+
+                     if($status){
+                      echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
+                        }else{
+                      echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
+                        }
+
                     }else{
 
                   $host = getHostByName(getHostName());
@@ -543,6 +610,28 @@ class Inputitembyarduino2 extends CI_Controller {
                      $status = $this->In_Timbangandanbarcodempi->inputdata4($str,$sgw[count($sgw)-1]+$minus,$minus);
                
                     if($status){
+                      echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
+                        }else{
+                      echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
+                        }
+
+                    }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
+                    
+                     $host = getHostByName(getHostName());
+                      $port = 1883;
+                      $clientID = md5(uniqid());
+              
+                      $mqtt = new \Lightning\App($host, $port, $clientID);
+              
+                      if (!$mqtt->connect()) {
+                          exit(1);
+                      }
+
+                      $mqtt->publish("dimas", 'data fgmpi masuk', 1);    
+              
+                     $status = $this->In_Timbangandanbarcodempi->inputdata4($str,str_replace("wn","",$exploder[count($exploder)-2])+$minus,$minus);
+
+                     if($status){
                       echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));

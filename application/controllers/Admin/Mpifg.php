@@ -301,9 +301,26 @@ class Mpifg extends CI_Controller {
                      r.UNBILLEDACCOUNT, r.QTYCONTROL, r.LFT, r.RGT, r.ISROOT, r.SERIALNUMBERTYPE,
                      r.FORCESN, r.MANAGEEXPIRED, r.MANAGESN, r.HSCODE, r.IMPORTDUTY_RATE,
                      r.IMPORTDUTY_TYPE, r.CUKAI_RATE, r.DELIVERNOSTOCKSN FROM ITEM r inner  join WAREHOUSE_FG_KELUAR fg on fg.ID_BARANG_FG = r.ITEMNO';
+      
+      $searchdate = $this->input->post('datefilter');
+
+
+      if (!empty($searchdate)){
+        $filter = explode("#start#", strtolower($searchdate));
+        $from =str_replace(['"',"'"], "", $filter[0]);
+        $end =str_replace(['"',"'"], "", $filter[1]);
+
+        if((!empty($end) && !empty($from)) && ($from != $end)){
+        $addfilter = "between '".$from."' and '".$end."'";
+        }elseif((!empty($end) && !empty($from)) && ($from == $end)){
+        $addfilter = "like '%".$end."%'";
+        }else{
+        $addfilter = "!= 'null'";
+        }
+      }
 
       $cari = array('r.ITEMNO','r.ITEMDESCRIPTION','fg.QTY_FG','fg.TGL_CREATE_FG');
-      $arraywhere = array();
+      $arraywhere = array('fg.TGL_CREATE_FG' => $addfilter);
       $where  = $arraywhere; 
 
       
@@ -333,9 +350,26 @@ class Mpifg extends CI_Controller {
                      r.UNBILLEDACCOUNT, r.QTYCONTROL, r.LFT, r.RGT, r.ISROOT, r.SERIALNUMBERTYPE,
                      r.FORCESN, r.MANAGEEXPIRED, r.MANAGESN, r.HSCODE, r.IMPORTDUTY_RATE,
                      r.IMPORTDUTY_TYPE, r.CUKAI_RATE, r.DELIVERNOSTOCKSN FROM ITEM r inner  join WAREHOUSE_FG_MASUK fg on fg.ID_BARANG_FG = r.ITEMNO';
+      
+      $searchdate = $this->input->post('datefilter');
+
+
+      if (!empty($searchdate)){
+        $filter = explode("#start#", strtolower($searchdate));
+        $from =str_replace(['"',"'"], "", $filter[0]);
+        $end =str_replace(['"',"'"], "", $filter[1]);
+
+        if((!empty($end) && !empty($from)) && ($from != $end)){
+        $addfilter = "between '".$from."' and '".$end."'";
+        }elseif((!empty($end) && !empty($from)) && ($from == $end)){
+        $addfilter = "like '%".$end."%'";
+        }else{
+        $addfilter = "!= 'null'";
+        }
+      }
 
       $cari = array('r.ITEMNO','r.ITEMDESCRIPTION','fg.QTY_FG','fg.TGL_CREATE_FG');
-      $arraywhere = array();
+      $arraywhere = array('fg.TGL_CREATE_FG' => $addfilter);
       $where  = $arraywhere; 
 
       
