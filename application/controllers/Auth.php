@@ -10,7 +10,7 @@ class Auth extends CI_Controller {
         public function index($autentik = null)
     {
     switch ($autentik) {
-		case '' : redirect(base_url('member/login'),'refresh'); break;
+		case '' : redirect(base_url('login'),'refresh'); break;
 	}
 
 	$usem = $this->input->post('usem');
@@ -21,7 +21,7 @@ class Auth extends CI_Controller {
 
 	if (($cek && $cek1)==null){
 		 $this->session->set_flashdata('pesan', '<div class="alert alert-danger">Username atau email atau Password  salah..!</div>');
-		redirect(base_url().'member/login');
+		redirect(base_url().'login');
 	}else{
 		$data_session = array(
 			'privilages' => $cek[0]['privilage'],
