@@ -5,8 +5,9 @@
 <!-- Bootstrap -->
 <script src="<?php echo base_url('assets'); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- PAGE PLUGINS -->
-<!-- date-range-picker -->
+<!-- InputMask -->
 <script src="<?php echo base_url('assets'); ?>/plugins/moment/moment.min.js"></script>
+<!-- date-range-picker -->
 <script src="<?php echo base_url('assets'); ?>/plugins/daterangepicker/daterangepicker.js"></script>
 
 <!-- DataTables  & Plugins -->

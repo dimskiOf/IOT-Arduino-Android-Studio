@@ -101,7 +101,11 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <br>
+                <button id="generateinputoutput" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#generateinputoutput"><i class="fas fa-plus">Buat Identification as</i></button>
+                <br>
+                <br>
                  <button id="generatebarcode" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#databar"><i class="fas fa-plus">Buat Barcode</i></button>
+                  
                  <br>
                 <table id="barang" class="table table-bordered table-striped">
                   <thead>
@@ -111,6 +115,7 @@
                     <th>NAMA BARANG</th>
                     <th>BERAT BARANG</th>
                     <th>QUANTITY</th>
+                    <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -123,6 +128,7 @@
                     <th>NAMA BARANG</th>
                     <th>BERAT BARANG</th>
                     <th>QUANTITY</th>
+                    <th>ACTION</th>
                   </tr>
                   </tfoot>
                 </table>
@@ -250,12 +256,13 @@
                   <tr>
                     <th>No</th>
                     <th>Load Number</th>
+                    <th>Kode Material Supplier</th>
                     <th>Kode Material</th>
-                    <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
-                    <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
+                    <th>TGL Masuk</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -266,12 +273,13 @@
                   <tr>
                     <th>No</th>
                     <th>Load Number</th>
+                    <th>Kode Material Supplier</th>
                     <th>Kode Material</th>
-                    <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
-                    <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
+                    <th>TGL Masuk</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>
@@ -400,12 +408,13 @@
                   <tr>
                     <th>No</th>
                     <th>Load Number</th>
+                    <th>Kode Material Supplier</th>
                     <th>Kode Material</th>
-                    <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
                     <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -416,12 +425,13 @@
                   <tr>
                     <th>No</th>
                     <th>Load Number</th>
+                    <th>Kode Material Supplier</th>
                     <th>Kode Material</th>
-                    <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
                     <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

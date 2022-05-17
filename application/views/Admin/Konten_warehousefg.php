@@ -111,6 +111,7 @@
                     <th>NAMA BARANG</th>
                     <th>BERAT BARANG</th>
                     <th>QUANTITY</th>
+                    <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -123,6 +124,7 @@
                     <th>NAMA BARANG</th>
                     <th>BERAT BARANG</th>
                     <th>QUANTITY</th>
+                    <th>ACTION</th>
                   </tr>
                   </tfoot>
                 </table>
@@ -253,9 +255,10 @@
                     <th>Kode Material</th>
                     <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
-                    <th>TGL Masuk</th>
-                    <th>Nilai Minus</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
+                    <th>TGL Keluar</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -269,9 +272,10 @@
                     <th>Kode Material</th>
                     <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
-                    <th>TGL Masuk</th>
-                    <th>Nilai Minus</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
+                    <th>TGL Keluar</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>
@@ -403,9 +407,10 @@
                     <th>Kode Material</th>
                     <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
                     <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -419,9 +424,10 @@
                     <th>Kode Material</th>
                     <th>Deskripsi Material</th>
                     <th>Satuan</th>
-                    <th>Quantity</th>
+                    <th>Quantity(Bruto)</th>
+                    <th>Berat Palet</th>
+                    <th>Quantity(Netto)</th>
                     <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

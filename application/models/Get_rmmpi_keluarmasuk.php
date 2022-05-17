@@ -128,12 +128,13 @@ class Get_rmmpi_keluarmasuk extends CI_Model {
                   $row = array();
                   $row[] = $no;
                   $row[] = $field->LOAD_NMBR;
+                  $row[] = '';
                   $row[] = $field->ITEMNO;
-                  $row[] = $field->ITEMDESCRIPTION;
                   $row[] = $field->UNIT1;
+                  $row[] = (float)$field->QTY_RM - (float)$field->INPUTMINUSPLUS;
+                  $row[] = $field->INPUTMINUSPLUS;
                   $row[] = $field->QTY_RM;
                   $row[] = $field->TGL_CREATE_RM;
-                  $row[] = $field->INPUTMINUSPLUS;
                   $row[] = $field->ID_RM_KELUAR;
                   $data[] = $row;
               }
@@ -267,12 +268,13 @@ class Get_rmmpi_keluarmasuk extends CI_Model {
                   $row = array();
                   $row[] = $no;
                   $row[] = $field->LOAD_NMBR;
+                  $row[] = '';
                   $row[] = $field->ITEMNO;
-                  $row[] = $field->ITEMDESCRIPTION;
                   $row[] = $field->UNIT1;
+                  $row[] = (float)$field->QTY_RM - (float)$field->INPUTMINUSPLUS;
+                  $row[] = $field->INPUTMINUSPLUS;
                   $row[] = $field->QTY_RM;
                   $row[] = $field->TGL_CREATE_RM;
-                  $row[] = $field->INPUTMINUSPLUS;
                   $row[] = $field->ID_RM_MASUK;
                   $data[] = $row;
               }

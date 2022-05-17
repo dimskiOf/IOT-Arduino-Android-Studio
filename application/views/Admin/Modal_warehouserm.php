@@ -110,3 +110,60 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
+
+
+          <div class="modal fade" id="ididentificationas" aria-labelledby="center" aria-hidden="true" style="overflow-y: auto;" data-keyboard="true" data-backdrop="static">
+        <div class="modal-dialog">
+          <div class="modal-content bg-warning">
+            <div class="modal-header">
+              <h4 class="modal-title">Tambah Identifikasi Id Supplier</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" id="addidentification">
+              <div id="isisuplay">
+                <div class="form-group row">
+                 <label class="col-sm-2 form-control-label">Id Master</label>
+                 <div class="col-sm-10">
+                    <input type="text" id="addmas" name="addmas" class="form-control" title="Input Kode Master" style="width: 100%" readonly/> 
+                </div>
+              </div>
+              <br>
+              <center><font color="red"><b>-----Kode Item Supplier Akan Di Identifikasi Sebagai Id Master------</b></font></center>
+              <br>
+              <div class="form-group row">
+                 <label class="col-sm-2 form-control-label">Isi data Id Supplier</label>
+                 <div class="col-sm-10">
+                  
+                   <select id="addsupp" name="addsupp[]" multiple="multiple" class="form-control" data-placeholder="Select Id Supplier" style="width: 100%">
+                          <option value="disabled" disabled>DATA ID SUPPLIER</option>
+                         
+                        </select> 
+                </div>
+              </div>
+              <div class="form-group row">
+                 <label class="col-sm-2 form-control-label">Isi data Id Supplier</label>
+                 <div class="col-sm-10">
+                  
+                   <select id="status" name="status[]"  class="form-control" data-placeholder="Select Status" style="width: 100%">
+                          <option value="disabled" disabled>Status Item</option>
+                          <option value="1">Aktif</option>
+                          <option value="0">Tidak Aktif</option>
+                        </select> 
+                </div>
+              </div>
+              </div>    
+            <div class="modal-footer justify-content-between">
+              <button  class="btn btn-outline-dark" data-dismiss="modal">Tutup</button>
+              <button id="senddataidentification" class="btn btn-outline-dark" >Simpan Data</button>
+            </div>
+          </form>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->

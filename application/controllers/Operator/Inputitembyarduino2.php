@@ -38,7 +38,8 @@ class Inputitembyarduino2 extends CI_Controller {
                     $print[] = ($html[$value] == '#') ? " " : $html[$value] ;   
                 }
 
-                 $str = "".implode("",$print)."";
+                 $sta = "".implode("",$print)."";
+                 $str = str_replace("<",'"',$sta);
                  
                  //end ngetrim
 
@@ -93,12 +94,15 @@ class Inputitembyarduino2 extends CI_Controller {
                     }else{
                         $minus = 0;
                     }
-
-                 if (($status->num_rows() > 0) && !empty($exploder[count($exploder)-2])){
+                if (!empty($exploder[count($exploder)-2])){
+                 if (($status->num_rows() > 0)){
                     //sgw/gsc
                     if (preg_match('/(GS)|(ST)|(US)|(NT)|(gs)|(st)|(us)|(nt)|(,)|[+]/i',$exploder[count($exploder)-2]) == true){
                       
                       $sgw = explode(" ", $exploder[count($exploder)-2]);
+                      $filteringagain = str_replace("$","",$sgw[count($sgw)-1]);
+                      $ex = explode(",", $filteringagain);
+                     
                       $host = getHostByName(getHostName());
                       $port = 1883;
                       $clientID = md5(uniqid());
@@ -111,13 +115,14 @@ class Inputitembyarduino2 extends CI_Controller {
 
                       $mqtt->publish("dimas", 'data rmmpi keluar', 1);    
               
-                     $status = $this->In_Timbangandanbarcodempi->inputdata($str,$sgw[count($sgw)-1]+$minus,$minus);
+                     $status = $this->In_Timbangandanbarcodempi->inputdata($str,$ex[count($ex)-1]+$minus,$minus);
                
                     if($status){
                       echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
                         }
+                        
                     //A12E prolite
                     }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
                     
@@ -167,6 +172,9 @@ class Inputitembyarduino2 extends CI_Controller {
                     }
 
                 }else{
+                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data Barcode' ));
+                }
+            }else{
                     // return $this->output
                     // ->set_content_type('application/json')
                     // ->set_status_header(304)
@@ -174,7 +182,7 @@ class Inputitembyarduino2 extends CI_Controller {
                     //         'pesan' => 'ERROR 304',
                     //         'type' => 'Null data timbangan'
                     // )));
-                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data timbangan' ));
+                    echo json_encode(array('pesan' => 'ERROR 304','type' => 'Null data timbangan' ));      
                 }
               }else{
                 echo json_encode(array('pesan' => 'ERROR 301','type' => 'Null data' ));
@@ -208,7 +216,8 @@ class Inputitembyarduino2 extends CI_Controller {
                     $print[] = ($html[$value] == '#') ? " " : $html[$value] ;   
                 }
 
-                 $str = "".implode("",$print)."";
+                 $sta = "".implode("",$print)."";
+                 $str = str_replace("<",'"',$sta);
                  
                  //end ngetrim
 
@@ -264,10 +273,15 @@ class Inputitembyarduino2 extends CI_Controller {
                         $minus = 0;
                     }
 
-                 if (($status->num_rows() > 0) && !empty($exploder[count($exploder)-2])){
+                if (!empty($exploder[count($exploder)-2])){
+                 if (($status->num_rows() > 0)){
+                    //sgw/gsc
                     if (preg_match('/(GS)|(ST)|(US)|(NT)|(gs)|(st)|(us)|(nt)|(,)|[+]/i',$exploder[count($exploder)-2]) == true){
                       
                       $sgw = explode(" ", $exploder[count($exploder)-2]);
+                      $filteringagain = str_replace("$","",$sgw[count($sgw)-1]);
+                      $ex = explode(",", $filteringagain);
+                     
                       $host = getHostByName(getHostName());
                       $port = 1883;
                       $clientID = md5(uniqid());
@@ -280,14 +294,14 @@ class Inputitembyarduino2 extends CI_Controller {
 
                       $mqtt->publish("dimas", 'data rmmpi masuk', 1);    
               
-                     $status = $this->In_Timbangandanbarcodempi->inputdata2($str,$sgw[count($sgw)-1]+$minus,$minus);
+                     $status = $this->In_Timbangandanbarcodempi->inputdata2($str,$ex[count($ex)-1]+$minus,$minus);
                
                     if($status){
                       echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
                         }
-
+                    //A12E prolite
                     }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
                     
                      $host = getHostByName(getHostName());
@@ -311,7 +325,7 @@ class Inputitembyarduino2 extends CI_Controller {
                         }
 
                     }else{
-
+                  //timbangan cas hdi
                   $host = getHostByName(getHostName());
                   $port = 1883;
                   $clientID = md5(uniqid());
@@ -326,7 +340,7 @@ class Inputitembyarduino2 extends CI_Controller {
           
                   $status = $this->In_Timbangandanbarcodempi->inputdata2($str,$exploder[count($exploder)-2]+$minus,$minus);
                   
-                if($status){
+                  if($status){
                   
                     echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
@@ -336,8 +350,17 @@ class Inputitembyarduino2 extends CI_Controller {
                     }
 
                 }else{
-
-                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data timbangan' ));
+                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data Barcode' ));
+                }
+            }else{
+                    // return $this->output
+                    // ->set_content_type('application/json')
+                    // ->set_status_header(304)
+                    // ->set_output(json_encode(array(
+                    //         'pesan' => 'ERROR 304',
+                    //         'type' => 'Null data timbangan'
+                    // )));
+                    echo json_encode(array('pesan' => 'ERROR 304','type' => 'Null data timbangan' ));      
                 }
               }else{
                 echo json_encode(array('pesan' => 'ERROR 301','type' => 'Null data' ));
@@ -372,7 +395,8 @@ class Inputitembyarduino2 extends CI_Controller {
                     $print[] = ($html[$value] == '#') ? " " : $html[$value] ;   
                 }
 
-                 $str = "".implode("",$print)."";
+                 $sta = "".implode("",$print)."";
+                 $str = str_replace("<",'"',$sta);
                  
                  //end ngetrim
 
@@ -428,10 +452,15 @@ class Inputitembyarduino2 extends CI_Controller {
                         $minus = 0;
                     }
 
-                 if (($status->num_rows() > 0) && !empty($exploder[count($exploder)-2])){
+                if (!empty($exploder[count($exploder)-2])){
+                 if (($status->num_rows() > 0)){
+                    //sgw/gsc
                     if (preg_match('/(GS)|(ST)|(US)|(NT)|(gs)|(st)|(us)|(nt)|(,)|[+]/i',$exploder[count($exploder)-2]) == true){
                       
                       $sgw = explode(" ", $exploder[count($exploder)-2]);
+                      $filteringagain = str_replace("$","",$sgw[count($sgw)-1]);
+                      $ex = explode(",", $filteringagain);
+                     
                       $host = getHostByName(getHostName());
                       $port = 1883;
                       $clientID = md5(uniqid());
@@ -444,14 +473,14 @@ class Inputitembyarduino2 extends CI_Controller {
 
                       $mqtt->publish("dimas", 'data fgmpi keluar', 1);    
               
-                     $status = $this->In_Timbangandanbarcodempi->inputdata3($str,$sgw[count($sgw)-1]+$minus,$minus);
+                     $status = $this->In_Timbangandanbarcodempi->inputdata3($str,$ex[count($ex)-1]+$minus,$minus);
                
                     if($status){
                       echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
                         }
-
+                    //A12E prolite
                     }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
                     
                      $host = getHostByName(getHostName());
@@ -475,7 +504,7 @@ class Inputitembyarduino2 extends CI_Controller {
                         }
 
                     }else{
-
+                  //timbangan cas hdi
                   $host = getHostByName(getHostName());
                   $port = 1883;
                   $clientID = md5(uniqid());
@@ -490,7 +519,7 @@ class Inputitembyarduino2 extends CI_Controller {
           
                   $status = $this->In_Timbangandanbarcodempi->inputdata3($str,$exploder[count($exploder)-2]+$minus,$minus);
                   
-                 if($status){
+                  if($status){
                   
                     echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
@@ -500,7 +529,17 @@ class Inputitembyarduino2 extends CI_Controller {
                     }
 
                 }else{
-                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data timbangan' ));
+                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data Barcode' ));
+                }
+            }else{
+                    // return $this->output
+                    // ->set_content_type('application/json')
+                    // ->set_status_header(304)
+                    // ->set_output(json_encode(array(
+                    //         'pesan' => 'ERROR 304',
+                    //         'type' => 'Null data timbangan'
+                    // )));
+                    echo json_encode(array('pesan' => 'ERROR 304','type' => 'Null data timbangan' ));      
                 }
               }else{
                 echo json_encode(array('pesan' => 'ERROR 301','type' => 'Null data' ));
@@ -535,7 +574,8 @@ class Inputitembyarduino2 extends CI_Controller {
                     $print[] = ($html[$value] == '#') ? " " : $html[$value] ;   
                 }
 
-                 $str = "".implode("",$print)."";
+                 $sta = "".implode("",$print)."";
+                 $str = str_replace("<",'"',$sta);
                  
                  //end ngetrim
 
@@ -591,10 +631,15 @@ class Inputitembyarduino2 extends CI_Controller {
                         $minus = 0;
                     }
 
-                 if (($status->num_rows() > 0) && !empty($exploder[count($exploder)-2])){
+                if (!empty($exploder[count($exploder)-2])){
+                 if (($status->num_rows() > 0)){
+                    //sgw/gsc
                     if (preg_match('/(GS)|(ST)|(US)|(NT)|(gs)|(st)|(us)|(nt)|(,)|[+]/i',$exploder[count($exploder)-2]) == true){
                       
                       $sgw = explode(" ", $exploder[count($exploder)-2]);
+                      $filteringagain = str_replace("$","",$sgw[count($sgw)-1]);
+                      $ex = explode(",", $filteringagain);
+                     
                       $host = getHostByName(getHostName());
                       $port = 1883;
                       $clientID = md5(uniqid());
@@ -607,14 +652,14 @@ class Inputitembyarduino2 extends CI_Controller {
 
                       $mqtt->publish("dimas", 'data fgmpi masuk', 1);    
               
-                     $status = $this->In_Timbangandanbarcodempi->inputdata4($str,$sgw[count($sgw)-1]+$minus,$minus);
+                     $status = $this->In_Timbangandanbarcodempi->inputdata4($str,$ex[count($ex)-1]+$minus,$minus);
                
                     if($status){
                       echo json_encode(array('pesan' => 'Data Masuk','type' => 'Success Input' ));
                         }else{
                       echo json_encode(array('pesan' => 'ERROR 303','type' => 'Gagal Input Kesalahan Data' ));
                         }
-
+                    //A12E prolite
                     }elseif(preg_match('/(wn)|(WN)/i',$exploder[count($exploder)-2]) == true){
                     
                      $host = getHostByName(getHostName());
@@ -638,7 +683,7 @@ class Inputitembyarduino2 extends CI_Controller {
                         }
 
                     }else{
-
+                  //timbangan cas hdi
                   $host = getHostByName(getHostName());
                   $port = 1883;
                   $clientID = md5(uniqid());
@@ -663,6 +708,9 @@ class Inputitembyarduino2 extends CI_Controller {
                     }
 
                 }else{
+                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data Barcode' ));
+                }
+            }else{
                     // return $this->output
                     // ->set_content_type('application/json')
                     // ->set_status_header(304)
@@ -670,7 +718,7 @@ class Inputitembyarduino2 extends CI_Controller {
                     //         'pesan' => 'ERROR 304',
                     //         'type' => 'Null data timbangan'
                     // )));
-                    echo json_encode(array('pesan' => 'ERROR 302','type' => 'Null data timbangan' ));
+                    echo json_encode(array('pesan' => 'ERROR 304','type' => 'Null data timbangan' ));      
                 }
               }else{
                 echo json_encode(array('pesan' => 'ERROR 301','type' => 'Null data' ));

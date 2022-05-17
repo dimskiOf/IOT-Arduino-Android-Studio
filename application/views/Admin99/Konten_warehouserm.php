@@ -232,7 +232,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <div class="form-group">
+                 <div class="form-group">
                   <label>Date range Filter:</label>
 
                   <div class="input-group">

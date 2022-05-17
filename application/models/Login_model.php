@@ -1,30 +1,30 @@
-<?php
+ <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
  
 class Login_model extends CI_Model {
 
  public function __construct()
     {
         parent::__construct();
-        $this->load->database();
+      
+
     }
 
-public function check($usem,$password) {
+ public function check($usem,$password) {
  	$this->db->select('*');
- 	$this->db->from('USER_LOGIN');
+ 	$this->db->from('tbl_login');
  	$this->db->group_start();
- 	$this->db->where('USERNAME',$usem);
- 	$this->db->or_where('EMAIL',$usem);
+ 	$this->db->where('username',$usem);
+ 	$this->db->or_where('email',$usem);
  	$this->db->group_end();
- 	$this->db->where('PASSWD',$password);
+ 	$this->db->where('password',$password);
  	return $this->db->get()->result_array();
  }
  public function check2($usem) {
  	$this->db->select('*');
- 	$this->db->from('TBL_USER');
- 	$this->db->where('USERNAME',$usem);
- 	$this->db->or_where('EMAIL',$usem);
+ 	$this->db->from('tbl_user');
+ 	$this->db->where('username',$usem);
+ 	$this->db->or_where('email',$usem);
  	return $this->db->get()->result_array();
  }
-
-
 }

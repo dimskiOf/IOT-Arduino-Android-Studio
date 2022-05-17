@@ -147,3 +147,23 @@ $route['operator99/inputdataarduinofg99keluar'] = 'Operator/Inputitembyarduino/i
 $route['operator99/inputdataarduinofg99masuk'] = 'Operator/Inputitembyarduino/inputdatabarcodedantimbangangd99fgmasuk';//OPerator melakukan input fg masuk melalui alat arduino
 
 
+//Beranda
+$route['beranda'] = 'Dashboard/Admindasboard'; //menu beranda admin
+
+//route kelola hak akses
+$route['hakakses'] = 'Hakakses/Adminkelolahakakses';
+$route['admin/kelhas'] = 'Hakakses/Adminkelolahakakses/kelola_hak_akses';
+$route['admin/tambahhak'] = 'Hakakses/Adminkelolahakakses/tambah_hak_akses';
+$route['admin/hapushak'] = 'Hakakses/Adminkelolahakakses/hapus_hak_akses';
+$route['admin/tambahhaksub'] = 'Hakakses/Adminkelolahakakses/tambah_hak_akses_sub_menu';
+$route['admin/hapushaksub'] = 'Hakakses/Adminkelolahakakses/hapus_hak_akses_sub_menu';
+$route['admin/tambahhaksubsub'] = 'Hakakses/Adminkelolahakakses/tambah_hak_akses_sub_submenu';
+$route['admin/hapushaksubsub'] = 'Hakakses/Adminkelolahakakses/hapus_hak_akses_sub_submenu';
+$route['admin/hakaksesmenu/(:any)/(:any)'] = 'Hakakses/Adminkelolahakakses/hak_akses_menu/$2/$1';
+$route['admin/hakaksessubmenu/(:any)/(:any)'] = 'Hakakses/Adminkelolahakakses/hak_akses_submenu/$2/$1';
+$route['admin/hakaksessubsubmenu/(:any)/(:any)'] = 'Hakakses/Adminkelolahakakses/hak_akses_sub_submenu/$2/$1';
+$route['admin/carirole/(:any)/(:any)'] = 'Hakakses/Adminkelolahakakses/cari_role/$2/$1';
+
+
+//akun logout
+$route['akun/logout'] = 'Logout';

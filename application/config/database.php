@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost/3051',
-	'username' => 'cps#1',
-	'password' => 'cps#2001',
-	'database' => realpath('db/PT. MAHAJAYA PLASTINDO.GDB'),
-	'dbdriver' => 'ibase',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => '#@22mpi_db_v1',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'development'),
@@ -97,82 +97,14 @@ $db['default'] = array(
 
 $db['db99update'] = array(
 	'dsn'	=> '',
-	'hostname' => '192.168.100.52/3051',
-	'username' => 'cps#1',
-	'password' => 'cps#2001',
-	'database' => 'D:\ACCURATE\MAHAJAYA 99.GDB',
-	'dbdriver' => 'ibase',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'development'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-$db['gd99'] = array(
-	'dsn'	=> '',
-	'hostname' => '192.168.100.52/3051',
-	'username' => 'cps#1',
-	'password' => 'cps#2001',
-	'database' => 'D:\ACCURATE\MAHAJAYA 99.GDB',
-	'dbdriver' => 'ibase',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'development'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-
-
-$db['buatan'] = array(
-	'dsn'	=> '',
-	'hostname' => '192.168.100.52/3051',
-	'username' => 'cps#1',
-	'password' => 'cps#2001',
-	'database' => 'D:\ACCURATE\MAHAJAYA 99.GDB',
-	'dbdriver' => 'ibase',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'development'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-$db['testerdb'] = array(
-	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'bimbelsmart',
+	'database' => '#@22gd99_db_v1',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
+	'db_debug' => (ENVIRONMENT !== 'development'),
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',

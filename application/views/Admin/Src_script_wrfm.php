@@ -183,7 +183,7 @@ function onMessageArrived(message) {
                 "orderable": false,
                 "data": null,
                 "mRender" : function(data, type, full){
-                    return '<tr><td><button class="btn btn-sm btn-danger text-white" onclick=hapusrmmasuk("'+full[8]+'"); title="Hapus Item"><i class="fa fa-trash"></i></button></td></tr>';
+                    return '<tr><td><button class="btn btn-sm btn-danger text-white" onclick=hapusrmmasuk("'+full[9]+'"); title="Hapus Item"><i class="fa fa-trash"></i></button></td></tr>';
                 }
             }],
        dom : 'Bfrtip',
@@ -250,7 +250,7 @@ function onMessageArrived(message) {
                 "orderable": false,
                 "data": null,
                 "mRender" : function(data, type, full){
-                    return '<tr><td><button class="btn btn-sm btn-danger text-white" onclick=hapusrmkeluar("'+full[8]+'"); title="Hapus Item"><i class="fa fa-trash"></i></button></td></tr>';
+                    return '<tr><td><button class="btn btn-sm btn-danger text-white" onclick=hapusrmkeluar("'+full[9]+'"); title="Hapus Item"><i class="fa fa-trash"></i></button></td></tr>';
                 }
             }],
        dom : 'Bfrtip',
@@ -437,6 +437,26 @@ $(document).ready(function(){
    cache: true
   }
  });
+
+  $("#addsupp").select2({
+  ajax: { 
+   url: "<?php echo base_url('mpi/select2getsupplierid') ?>",
+   type: "post",
+   dataType: 'json',
+   delay: 250,
+   data: function (params) {
+    return {
+      searchTerm: params.term // search term
+    };
+   },
+   processResults: function (response) {
+     return {
+        results: response
+     };
+   },
+   cache: true
+  }
+ });
 });
 
 
@@ -481,5 +501,15 @@ $(document).ready(function(){
 
           });
        });
+
+    function settingidentity(dt1){
+        if (dt1 != ""){
+           dt2 = $("button:focus").attr("data");
+           $('#addmas').val(dt2); 
+           $('#ididentificationas').modal('show');
+        }else{
+            alert("id kosong");
+        }
+    }
 
 </script>

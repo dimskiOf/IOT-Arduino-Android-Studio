@@ -257,7 +257,7 @@
                     <th>Satuan</th>
                     <th>Quantity</th>
                     <th>TGL Masuk</th>
-                    <th>Nilai Minus</th>
+                    <th>Berat Palet</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -273,7 +273,7 @@
                     <th>Satuan</th>
                     <th>Quantity</th>
                     <th>TGL Masuk</th>
-                    <th>Nilai Minus</th>
+                    <th>Berat Palet</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>
@@ -409,7 +409,7 @@
                     <th>Satuan</th>
                     <th>Quantity</th>
                     <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
+                    <th>Berat Palet</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -425,7 +425,7 @@
                     <th>Satuan</th>
                     <th>Quantity</th>
                     <th>TGL Keluar</th>
-                    <th>Nilai Minus</th>
+                    <th>Berat Palet</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

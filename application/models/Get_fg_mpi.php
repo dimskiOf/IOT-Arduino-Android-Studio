@@ -129,6 +129,16 @@ function get_tables_query($query,$cari,$where,$iswhere)
                   $row[] = $field->ITEMDESCRIPTION;
                   $row[] = $field->WEIGHT;
                   $row[] = $field->QTY;
+                  $row[] = '<div class="btn-group">
+  <button type="button" class="btn btn-success">Expand</button>
+  <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+    <button class="dropdown-item" id="identity">Identification As</btton>
+    <button class="dropdown-item" id="identity">Update Item</btton>
+  </div>
+</div>';
                   $data[] = $row;
               }
 
