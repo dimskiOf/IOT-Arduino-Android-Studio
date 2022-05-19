@@ -95,7 +95,7 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-$db['db99update'] = array(
+$db['gd99'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',

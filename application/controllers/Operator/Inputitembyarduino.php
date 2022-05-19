@@ -5,10 +5,7 @@ class Inputitembyarduino extends CI_Controller {
 
 	function __construct(){
         parent::__construct();
-          $this->load->model('Get_raw_gd99');
-          $this->load->model('Get_add_rm_gd99');
           $this->load->model('In_Timbangandanbarcode');
-          $this->load->model('Get_setting_timbangan');
     }
  
 
@@ -90,7 +87,7 @@ class Inputitembyarduino extends CI_Controller {
                   //end ngetrim minus
                  
                  $gd99 = $this->load->database('gd99', TRUE);
-                 $status = $gd99->get_where('ITEM', array('ITEMNO' => $str));
+                 $status = $gd99->get_where('item', array('itemno' => $str));
 
                     if (!empty($exploder2[count($exploder2)-2])){
                         $minus = $exploder2[count($exploder2)-2];
@@ -238,7 +235,7 @@ class Inputitembyarduino extends CI_Controller {
                   //end ngetrim minus
                  
                  $gd99 = $this->load->database('gd99', TRUE);
-                 $status = $gd99->get_where('ITEM', array('ITEMNO' => $str));
+                 $status = $gd99->get_where('item', array('itemno' => $str));
 
                  if (!empty($exploder2[count($exploder2)-2])){
                         $minus = $exploder2[count($exploder2)-2];
@@ -381,7 +378,7 @@ class Inputitembyarduino extends CI_Controller {
                   //end ngetrim minus
                  
                  $gd99 = $this->load->database('gd99', TRUE);
-                 $status = $gd99->get_where('ITEM', array('ITEMNO' => $str));
+                 $status = $gd99->get_where('item', array('itemno' => $str));
 
                  if (!empty($exploder2[count($exploder2)-2])){
                         $minus = $exploder2[count($exploder2)-2];
@@ -523,7 +520,7 @@ class Inputitembyarduino extends CI_Controller {
                   //end ngetrim minus
                  
                  $gd99 = $this->load->database('gd99', TRUE);
-                 $status = $gd99->get_where('ITEM', array('ITEMNO' => $str));
+                 $status = $gd99->get_where('item', array('itemno' => $str));
 
                  if (!empty($exploder2[count($exploder2)-2])){
                         $minus = $exploder2[count($exploder2)-2];
