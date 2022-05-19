@@ -58,36 +58,65 @@ $route['translate_uri_dashes'] = FALSE;
 $route['user/login'] = 'Login';
 $route['user/auth/(:any)/(:any)'] = 'Auth/index/$1';
 
+//******************************************** PENGELOLAAN WAREHOUSE **************************************************\\
 
-//admin mpi rm
-$route['mpi'] = 'Admin/mpi';//ADMIN MPI
-$route['mpi/loadrm'] = 'Admin/mpi/getdatarm';//ADMIN MPI LOAD DATA RM
-$route['mpi/select2get'] = 'Admin/mpi/select2getdata'; //select2 get data
-$route['mpi/addbarcode'] = 'Admin/mpi/insertdataforprinting'; //Input data untuk printing barcode
-$route['mpi/getadddatarm'] = 'Admin/mpi/getadddatarm';  //ngambil data add rm
-$route['mpi/printbarcoderm'] = 'Admin/Print_barcodeqrcode3'; //printing barcode rm
-$route['mpi/hapusadditem'] = 'Admin/mpi/hapusadditem';//hapus add item
-$route['mpi/loadrmkeluar'] = 'Admin/mpi/getdatarmkeluar'; //get data rm keluar
-$route['mpi/loadrmmasuk'] = 'Admin/mpi/getdatarmmasuk'; //get data rm masuk
-$route['mpi/hapusrmkeluar'] = 'Admin/mpi/hapusdatarmkeluar'; //hapus data rm keluar
-$route['mpi/hapusrmmasuk'] = 'Admin/mpi/hapusdatarmmasuk'; //hapus data rm masuk
+//admin fg masuk
+$route['fgmasuk'] = 'warehouse/Fgmasuk/Fgmasuk_c'; //FG ADMIN
+$route['fgmasuk/select2getfg'] = 'warehouse/Fgmasuk/Fgmasuk_c/select2getdata'; // select2 get data fg
+$route['fgmasuk/addbarcodefg'] = 'warehouse/Fgmasuk/Fgmasuk_c/insertdataforprinting'; // input data untuk printing barcode fg
+$route['fgmasuk/getadddatafg'] = 'warehouse/Fgmasuk/Fgmasuk_c/getadddata';  //ngambil data add fg -
+$route['fgmasuk/printbarcodefg'] = 'Print_b/Barcode_fgmasuk'; //printing barcode fg
+$route['fgmasuk/hapusadditemfg'] = 'warehouse/Fgmasuk/Fgmasuk_c/hapusadditem';//hapus add item
+$route['fgmasuk/loadfgmasuk'] = 'warehouse/Fgmasuk/Fgmasuk_c/getdatafgmasuk'; //get data fg masuk ***
+$route['fgmasuk/hapusfgmasuk'] = 'warehouse/Fgmasuk/Fgmasuk_c/hapusdatafgmasuk'; //hapus data fg masuk
 
-//admin mpi fg
-$route['mpi/fg'] = 'Admin/mpifg'; //FG ADMIN MPI
-$route['mpi/loadfg'] = 'Admin/mpifg/getdatafg'; //ADMIN MPI LOAD DATA FG
-$route['mpi/select2getfg'] = 'Admin/mpifg/select2getdata'; // select2 get data fg
-$route['mpi/addbarcodefg'] = 'Admin/mpifg/insertdataforprinting'; // input data untuk printing barcode fg
-$route['mpi/getadddatafg'] = 'Admin/mpifg/getadddata';  //ngambil data add fg -
-$route['mpi/printbarcodefg'] = 'Admin/Print_barcodeqrcode4'; //printing barcode fg
-$route['mpi/hapusadditemfg'] = 'Admin/mpifg/hapusadditem';//hapus add item
-$route['mpi/loadfgkeluar'] = 'Admin/mpifg/getdatafgkeluar'; //get data fg keluar
-$route['mpi/loadfgmasuk'] = 'Admin/mpifg/getdatafgmasuk'; //get data fg masuk
-$route['mpi/hapusfgkeluar'] = 'Admin/mpifg/hapusdatafgkeluar'; //hapus data fg keluar
-$route['mpi/hapusfgmasuk'] = 'Admin/mpifg/hapusdatafgmasuk'; //hapus data fg masuk
+//admin fg keluar
+$route['fgkeluar'] = 'warehouse/fgkeluar/Fgkeluar_c'; //FG ADMIN
+$route['fgkeluar/select2getfg'] = 'warehouse/fgkeluar/Fgkeluar_c/select2getdata'; // select2 get data fg
+$route['fgkeluar/addbarcodefg'] = 'warehouse/fgkeluar/Fgkeluar_c/insertdataforprinting'; // input data untuk printing barcode fg
+$route['fgkeluar/getadddatafg'] = 'warehouse/fgkeluar/Fgkeluar_c/getadddata';  //ngambil data add fg -
+$route['fgkeluar/printbarcodefg'] = 'warehouse/Print_b/Barcode_fgkeluar'; //printing barcode fg
+$route['fgkeluar/hapusadditemfg'] = 'warehouse/fgkeluar/Fgkeluar_c/hapusadditem';//hapus add item
+$route['fgkeluar/loadfgkeluar'] = 'warehouse/fgkeluar/Fgkeluar_c/getdatafgkeluar'; //get data fg keluar ***
+$route['fgkeluar/hapusfgkeluar'] = 'warehouse/fgkeluar/Fgkeluar_c/hapusdatafgkeluar'; //hapus data fg keluar
 
+//admin rm masuk
+$route['rmmasuk'] = 'warehouse/rmmasuk/Rmmasuk_c'; //RM ADMIN
+$route['rmmasuk/select2getrm'] = 'warehouse/rmmasuk/Rmmasuk_c/select2getdata'; // select2 get data rm
+$route['rmmasuk/addbarcoderm'] = 'warehouse/rmmasuk/Rmmasuk_c/insertdataforprinting'; // input data untuk printing barcode rm
+$route['rmmasuk/getadddatarm'] = 'warehouse/rmmasuk/Rmmasuk_c/getadddata';  //ngambil data add rm -
+$route['rmmasuk/printbarcoderm'] = 'Print_b/Barcode_rmmasuk'; //printing barcode rm
+$route['rmmasuk/hapusadditemrm'] = 'warehouse/rmmasuk/Rmmasuk_c/hapusadditem';//hapus add item
+$route['rmmasuk/loadrmmasuk'] = 'warehouse/rmmasuk/Rmmasuk_c/getdatarmmasuk'; //get data rm masuk ***
+$route['rmmasuk/hapusrmmasuk'] = 'warehouse/rmmasuk/Rmmasuk_c/hapusdatarmmasuk'; //hapus data rm masuk
+
+//admin rm keluar
+$route['rmkeluar'] = 'warehouse/rmkeluar/Rmkeluar_c'; //RM ADMIN
+$route['rmkeluar/select2getrm'] = 'warehouse/rmkeluar/Rmkeluar_c/select2getdata'; // select2 get data rm
+$route['rmkeluar/addbarcoderm'] = 'warehouse/rmkeluar/Rmkeluar_c/insertdataforprinting'; // input data untuk printing barcode fg
+$route['rmkeluar/getadddatarm'] = 'warehouse/rmkeluar/Rmkeluar_c/getadddata';  //ngambil data add rm -
+$route['rmkeluar/printbarcoderm'] = 'Print_b/Barcode_rmkeluar'; //printing barcode rm
+$route['rmkeluar/hapusadditemrm'] = 'warehouse/rmkeluar/Rmkeluar_c/hapusadditem';//hapus add item
+$route['rmkeluar/loadrmkeluar'] = 'warehouse/rmkeluar/Rmkeluar_c/getdatarmkeluar'; //get data rm keluar ***
+$route['rmkeluar/hapusrmkeluar'] = 'warehouse/rmkeluar/Rmkeluar_c/hapusdatarmkeluar'; //hapus data rm keluar
+
+//******************************************** END PENGELOLAAN WAREHOUSE **************************************************\\
+
+//******************************************** ANDROID **************************************************\\
 
 $route['operatormpi/upload'] = 'Operator/Konfirmasi_bahanmpi';//ADMIN MPI
 $route['operatormpi/getitembycode'] = 'Operator/Konfirmasi_bahanmpi/getrmbykodeitem'; //get data untuk handphone dan kembalikan data untuk input
+
+//API android
+$route['v1/login'] = 'rest/api/users';
+$route['v1/login'] = 'rest/api';
+
+$route['operator99/upload'] = 'Operator/Konfirmasi_bahan99';//ADMIN 99
+$route['operator99/getitembycode'] = 'Operator/Konfirmasi_bahan99/getrmbykodeitem'; //get data untuk handphone dan kembalikan data untuk input
+
+//********************************************* END ANDROID ************************************************\\
+
+//******************************************** ALAT ARDUINO **************************************************\\
 
 //arduino MPI
 $route['operatormpi/inputdataarduinormmpikeluar'] = 'Operator/Inputitembyarduino2/inputdatabarcodedantimbanganmpirmkeluar';//OPerator melakukan input rm keluar melalui alat arduino
@@ -98,45 +127,6 @@ $route['operatormpi/inputdataarduinofgmpikeluar'] = 'Operator/Inputitembyarduino
 
 $route['operatormpi/inputdataarduinofgmpimasuk'] = 'Operator/Inputitembyarduino2/inputdatabarcodedantimbanganmpifgmasuk';//OPerator melakukan input fg masuk melalui alat arduino
 
-//API android
-$route['v1/login'] = 'rest/api/users';
-$route['v1/login'] = 'rest/api';
-
-
-//gudang 99 rm
-$route['gd99'] = 'Admin/Gudang99';//ADMIN 99
-$route['gd99/loadrm'] = 'Admin/gudang99/getdatarm';//ADMIN 99 LOAD DATA RM
-$route['gd99/select2get'] = 'Admin/gudang99/select2getdata'; //select2 get data
-$route['gd99/addbarcode'] = 'Admin/gudang99/insertdataforprinting'; //Input data untuk printing barcode
-$route['gd99/getadddatarm'] = 'Admin/gudang99/getadddatarm';  //ngambil data add rm
-$route['gd99/printbarcoderm'] = 'Admin/Print_barcodeqrcode'; //printing barcode rm
-$route['gd99/hapusadditem'] = 'Admin/gudang99/hapusadditem';//hapus add item
-$route['gd99/loadrmkeluar'] = 'Admin/gudang99/getdatarmkeluar'; //get data rm keluar
-$route['gd99/loadrmmasuk'] = 'Admin/gudang99/getdatarmmasuk'; //get data rm masuk
-$route['gd99/hapusrmkeluar'] = 'Admin/gudang99/hapusdatarmkeluar'; //hapus data rm keluar
-$route['gd99/hapusrmmasuk'] = 'Admin/gudang99/hapusdatarmmasuk'; //hapus data rm masuk
-
-//gudang 99 fg
-$route['gd99/fg'] = 'Admin/gudang99fg'; //FG ADMIN 99
-$route['gd99/loadfg'] = 'Admin/gudang99fg/getdatafg'; //ADMIN 99 LOAD DATA FG
-$route['gd99/select2getfg'] = 'Admin/gudang99fg/select2getdata'; // select2 get data fg
-$route['gd99/addbarcodefg'] = 'Admin/gudang99fg/insertdataforprinting'; // input data untuk printing barcode fg
-$route['gd99/getadddatafg'] = 'Admin/gudang99fg/getadddata';  //ngambil data add fg -
-$route['gd99/printbarcodefg'] = 'Admin/Print_barcodeqrcode2'; //printing barcode fg
-$route['gd99/hapusadditemfg'] = 'Admin/gudang99fg/hapusadditem';//hapus add item
-$route['gd99/loadfgkeluar'] = 'Admin/gudang99fg/getdatafgkeluar'; //get data fg keluar
-$route['gd99/loadfgmasuk'] = 'Admin/gudang99fg/getdatafgmasuk'; //get data fg masuk
-$route['gd99/hapusfgkeluar'] = 'Admin/gudang99fg/hapusdatafgkeluar'; //hapus data fg keluar
-$route['gd99/hapusfgmasuk'] = 'Admin/gudang99fg/hapusdatafgmasuk'; //hapus data fg masuk
-
-$route['operator99/upload'] = 'Operator/Konfirmasi_bahan99';//ADMIN 99
-$route['operator99/getitembycode'] = 'Operator/Konfirmasi_bahan99/getrmbykodeitem'; //get data untuk handphone dan kembalikan data untuk input
-
-
-//clearalldata triger
-$route['all/clear'] = 'Admin/Clear';
-
-
 //arduino 99
 $route['operator99/inputdataarduinorm99keluar'] = 'Operator/Inputitembyarduino/inputdatabarcodedantimbangangd99rmkeluar';//OPerator melakukan input rm keluar melalui alat arduino
 
@@ -146,9 +136,12 @@ $route['operator99/inputdataarduinofg99keluar'] = 'Operator/Inputitembyarduino/i
 
 $route['operator99/inputdataarduinofg99masuk'] = 'Operator/Inputitembyarduino/inputdatabarcodedantimbangangd99fgmasuk';//OPerator melakukan input fg masuk melalui alat arduino
 
+//******************************************** END ALAT ARDUINO **************************************************\\
 
 //Beranda
 $route['beranda'] = 'Dashboard/Admindasboard'; //menu beranda admin
+
+//******************************************** PENGELOLAAN AKUN **************************************************\\
 
 //route kelola hak akses
 $route['hakakses'] = 'Hakakses/Adminkelolahakakses';
@@ -164,6 +157,7 @@ $route['admin/hakaksessubmenu/(:any)/(:any)'] = 'Hakakses/Adminkelolahakakses/ha
 $route['admin/hakaksessubsubmenu/(:any)/(:any)'] = 'Hakakses/Adminkelolahakakses/hak_akses_sub_submenu/$2/$1';
 $route['admin/carirole/(:any)/(:any)'] = 'Hakakses/Adminkelolahakakses/cari_role/$2/$1';
 
+//******************************************** END PENGELOLAAN AKUN **************************************************\\
 
 //akun logout
 $route['akun/logout'] = 'Logout';
